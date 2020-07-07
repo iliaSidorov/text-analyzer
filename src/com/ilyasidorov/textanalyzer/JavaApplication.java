@@ -5,13 +5,14 @@ import java.nio.file.NoSuchFileException;
 
 public class JavaApplication {
 
-    static String filePath = "E:\\projects\\text-analizer\\src\\com\\ilyasidorov\\textanalyzer\\file.txt";
+    static String absoluteFilePath = "E:\\projects\\text-analizer\\src\\com\\ilyasidorov\\textanalyzer\\file.txt";
+    static String relativeFilePath = "src/com/ilyasidorov/textanalyzer/file.txt";
 
     public static void main(String[] args) {
         TextFromFileAnalyzer analyzer = new TextFromFileAnalyzer();
 
         try {
-            analyzer.analyze(filePath);
+            analyzer.analyze(absoluteFilePath);
         } catch (NoSuchFileException e) {
             System.out.println("Couldn't find your file, man. Check your path and try it again");
         } catch (IOException e) {
